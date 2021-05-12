@@ -42,8 +42,9 @@ class AccountAPI(Client):
                           limit=None):
         local_vars = locals()
         params = {}
-        for var_name, var_value in local_vars.items():
-            if var_name != 'params' and var_value is not None:
+        for var_name in ['instType', 'ccy', 'mgnMode', 'ctType', 'type', 'subType', 'after', 'before', 'limit']:
+            var_value = local_vars.get(var_name)
+            if var_value is not None:
                 params[var_name] = var_value
         return self._request_with_params(GET, BILLS_ARCHIVE, params)
 
