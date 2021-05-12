@@ -23,7 +23,11 @@ class AccountAPI(Client):
 
     # Get Positions
     def get_positions(self, instType=None, instId=None):
-        params = {'instType': instType, 'instId': instId}
+        params = {}
+        if instType:
+            params['instType'] = instType
+        if instId:
+            params['instId'] = instId
         return self._request_with_params(GET, POSITION_INFO, params)
 
     # Get Bills Details (recent 7 days)
@@ -101,5 +105,7 @@ class AccountAPI(Client):
 
     # Get Maximum Withdrawals
     def get_max_withdrawal(self, ccy=None):
-        params = {'ccy': ccy}
+        params = {}
+        if ccy:
+            params['ccy'] = ccy
         return self._request_with_params(GET, MAX_WITHDRAWAL, params)
