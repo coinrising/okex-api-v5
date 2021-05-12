@@ -40,8 +40,11 @@ class AccountAPI(Client):
     # Get Bills Details (recent 3 months)
     def get_bills_details(self, instType=None, ccy=None, mgnMode=None, ctType=None, type=None, subType=None, after=None, before=None,
                           limit=None):
-        params = {'instType': instType, 'ccy': ccy, 'mgnMode': mgnMode, 'ctType': ctType, 'type': type,
-                  'subType': subType, 'after': after, 'before': before, 'limit': limit}
+        local_vars = locals()
+        params = {}
+        for var_name, var_value in local_vars.items():
+            if var_name != 'params' and var_value is not None:
+                params[var_name] = var_value
         return self._request_with_params(GET, BILLS_ARCHIVE, params)
 
     # Get Account Configuration
