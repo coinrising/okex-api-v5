@@ -5,6 +5,10 @@ import datetime
 from . import consts as c
 
 
+def clean_dict_none(d: dict) -> dict:
+    return {k:d[k] for k in d.keys() if d[k] != None}
+
+
 def sign(message, secretKey):
     mac = hmac.new(bytes(secretKey, encoding='utf8'), bytes(message, encoding='utf-8'), digestmod='sha256')
     d = mac.digest()
@@ -27,6 +31,7 @@ def get_header(api_key, sign, timestamp, passphrase, flag):
 
 
 def parse_params_to_str(params):
+    params = clean_dict_none(params)
     url = '?'
     for key, value in params.items():
         url = url + str(key) + '=' + str(value) + '&'
