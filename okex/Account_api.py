@@ -100,7 +100,7 @@ class AccountAPI(Client):
     # Get interest-accrued
     def get_interest_rate(self, ccy=None):
         params = {'ccy': ccy}
-        return self._request_with_params(GET, INTEREST_RATE, params)
+        return self._request_with_params(GET, INTEREST_RATE_ACCOUNT, params)
 
     # Set Greeks (PA/BS)
     def set_greeks(self, greeksType):
