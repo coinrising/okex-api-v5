@@ -16,7 +16,7 @@ def get_timestamp():
 
 
 def get_server_time():
-    url = "https://www.okex.com/api/v5/public/time"
+    url = "https://www.okx.com/api/v5/public/time"
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()['data'][0]['ts']
@@ -386,15 +386,15 @@ passphrase = ""
 
 # WebSocket公共频道 public channels
 # 实盘 real trading
-# url = "wss://ws.okex.com:8443/ws/v5/public"
+# url = "wss://ws.okx.com:8443/ws/v5/public"
 # 模拟盘 demo trading
-# url = "wss://ws.okex.com:8443/ws/v5/public?brokerId=9999"
+# url = "wss://ws.okx.com:8443/ws/v5/public?brokerId=9999"
 
 # WebSocket私有频道 private channels
 # 实盘 real trading
-# url = "wss://ws.okex.com:8443/ws/v5/private"
+# url = "wss://ws.okx.com:8443/ws/v5/private"
 # 模拟盘 demo trading
-# url = "wss://ws.okex.com:8443/ws/v5/private?brokerId=9999"
+# url = "wss://ws.okx.com:8443/ws/v5/private?brokerId=9999"
 
 '''
 公共频道 public channel

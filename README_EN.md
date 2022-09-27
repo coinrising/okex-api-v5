@@ -19,7 +19,7 @@ pip install websockets==6.0
 
 #### Step 2: Configure Personal Information
 
-2.1 If you have no API，[Click here](https://www.okex.com/account/users/myApi) to the official websit to apply for the API
+2.1 If you have no API，[Click here](https://www.okx.com/account/users/myApi) to the official websit to apply for the API
 
 2.2 Fill out all necessary informatiuon in `example.py（RestAPI）`  and `websocket_example.py（WebSocketAPI）`
 
@@ -40,10 +40,10 @@ passphrase = ""
 
 ```python 
 # WebSocket public channel
-url = "wss://ws.okex.com:8443/ws/v5/public?brokerId=9999"
+url = "wss://ws.okx.com:8443/ws/v5/public?brokerId=9999"
 
 # WebSocket private channel
-url = "wss://ws.okex.com:8443/ws/v5/private?brokerId=9999"
+url = "wss://ws.okx.com:8443/ws/v5/private?brokerId=9999"
 ```
 
 ```Python
@@ -59,7 +59,7 @@ loop.run_until_complete(trade(url, api_key, passphrase, seceret_key, trade_param
 
 P.S. 
 
-- If  you know little about API, advise consulting the  offical [API document](https://www.okex.com/docs-v5/en/)
+- If  you know little about API, advise consulting the  offical [API document](https://www.okx.com/docs-v5/en/)
 
 - User with RestAPI can configure parameter `flag` in `example.py` in  to choose to access to real trading or demo trading 
 
