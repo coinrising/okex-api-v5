@@ -1,5 +1,5 @@
 # http header
-API_URL = 'https://www.okex.com'
+API_URL = 'https://www.okx.com'
 
 CONTENT_TYPE = 'Content-Type'
 OK_ACCESS_KEY = 'OK-ACCESS-KEY'
@@ -34,7 +34,7 @@ GET_LEVERAGE = '/api/v5/account/leverage-info'
 MAX_LOAN = '/api/v5/account/max-loan'
 FEE_RATES = '/api/v5/account/trade-fee'
 INTEREST_ACCRUED = '/api/v5/account/interest-accrued'
-INTEREST_RATE = '/api/v5/account/interest-rate'
+INTEREST_RATE_ACCOUNT = '/api/v5/account/interest-rate'
 SET_GREEKS = '/api/v5/account/set-greeks'
 MAX_WITHDRAWAL = '/api/v5/account/max-withdrawal'
 

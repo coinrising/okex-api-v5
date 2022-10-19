@@ -17,7 +17,7 @@ pip install websockets==6.0
 
 #### 第二步：配置个人信息
 
-2.1 如果还未有API，可[点击](https://www.okex.com/account/users/myApi)前往官网进行申请
+2.1 如果还未有API，可[点击](https://www.okx.com/account/users/myApi)前往官网进行申请
 
 2.2 将各项信息在`example.py（RestAPI）`和`websocket_example.py（WebSocketAPI）`中填写
 
@@ -42,10 +42,10 @@ passphrase = ""
     
     ```python
     # WebSocket公共频道
-    url = "wss://ws.okex.com:8443/ws/v5/public?brokerId=9999"
+    url = "wss://ws.okx.com:8443/ws/v5/public?brokerId=9999"
     
     # WebSocket私有频道
-    url = "wss://ws.okex.com:8443/ws/v5/private?brokerId=9999"
+    url = "wss://ws.okx.com:8443/ws/v5/private?brokerId=9999"
     ```
 
     ```python
@@ -61,7 +61,7 @@ passphrase = ""
 
 附言：
 
-* 如果对API尚不了解，建议参考`OKEx`官方[API文档](https://www.okex.com/docs-v5/zh/)
+* 如果对API尚不了解，建议参考`OKEx`官方[API文档](https://www.okx.com/docs-v5/zh/)
 
 * 使用RestAPI的用户可以通过设置`example.py`文件下的flag参数来选择接入实盘或者模拟盘
 
