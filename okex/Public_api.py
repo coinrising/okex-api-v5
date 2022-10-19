@@ -74,7 +74,7 @@ class PublicAPI(Client):
         return self._request_with_params(GET, MARK_PRICE, params)
 
     def get_interest_rate(self):
-        return self._request_without_params(GET, INTEREST_RATE)
+        return self._request_without_params(GET, INTEREST_RATE_LOAN_QUATA)
 
     def get_vip_interest_rate(self):
-        return self._request_without_params(GET, VIP_INTEREST_RATE)
+        return self._request_without_params(GET, VIP_INTEREST_RATE_LOAN_QUATA)
