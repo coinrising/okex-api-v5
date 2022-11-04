@@ -95,3 +95,23 @@ class TradeAPI(Client):
         params = {'ordType': ordType, 'state': state, 'algoId': algoId, 'instType': instType, 'instId': instId,
                   'after': after, 'before': before, 'limit': limit}
         return self._request_with_params(GET, ORDERS_ALGO_HISTORY, params)
+
+    def easy_convert_currency_list(self):
+        """Get easy convert currency list"""
+        params = {}
+        return self._request_with_params(GET, EASY_CONVERT_CURRENCY_LIST, params)
+
+    def easy_convert(self, from_ccy, to_ccy):
+        """do easy convert"""
+        params = {'fromCcy': from_ccy, 'toCcy': to_ccy}
+        return self._request_with_params(POST, EASY_CONVERT, params)
+
+    def one_click_repay_currency_list(self):
+        """Get easy convert currency list"""
+        params = {}
+        return self._request_with_params(GET, ONE_CLICK_REPAY_CURRENCY_LIST, params)
+
+    def one_click_repay(self, debt_ccy, repay_ccy):
+        """do easy convert"""
+        params = {'debtCcy': debt_ccy, 'repayCcy': repay_ccy}
+        return self._request_with_params(POST, ONE_CLICK_REPAY, params)

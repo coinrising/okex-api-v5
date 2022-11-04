@@ -96,6 +96,10 @@ PLACE_ALGO_ORDER = '/api/v5/trade/order-algo'
 CANCEL_ALGOS = '/api/v5/trade/cancel-algos'
 ORDERS_ALGO_OENDING = '/api/v5/trade/orders-algo-pending'
 ORDERS_ALGO_HISTORY = '/api/v5/trade/orders-algo-history'
+EASY_CONVERT_CURRENCY_LIST = '/api/v5/trade/easy-convert-currency-list'
+EASY_CONVERT = '/api/v5/trade/easy-convert'
+ONE_CLICK_REPAY_CURRENCY_LIST = '/api/v5/trade/one-click-repay-currency-list'
+ONE_CLICK_REPAY = '/api/v5/trade/one-click-repay'
 
 # SubAccount
 BALANCE = '/api/v5/account/subaccount/balances'
