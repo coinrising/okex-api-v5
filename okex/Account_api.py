@@ -116,4 +116,4 @@ class AccountAPI(Client):
 
     def get_staking_defi_offers(self, product_id=None, protocol_type=None, ccy=None):
         params = {'productId': product_id, 'protocolType': protocol_type, 'ccy': ccy}
-        return self._request_with_params(GET, MAX_WITHDRAWAL, params)
+        return self._request_with_params(GET, FINANCE_STAKING_DEFI_OFFERS, params)
