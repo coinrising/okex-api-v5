@@ -3,9 +3,9 @@ from setuptools import setup
 
 setup(
     name='okex-api-v5',
-    version='1.1.7',
+    version='1.1.8',
     packages=['okex'],
-    install_requires=['requests'],
+    install_requires=['httpx[http2]'],
     author='zerodivision',
     author_email='zerodivision@zerodivision.tech',
     url='https://www.zerodivision.tech/'

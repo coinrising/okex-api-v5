@@ -1,17 +1,20 @@
-import requests
 import json
+
+import httpx
+
 from . import consts as c, utils, exceptions
 
 
 class Client(object):
 
-    def __init__(self, api_key, api_secret_key, passphrase, use_server_time=False, flag='1'):
+    def __init__(self, api_key, api_secret_key, passphrase, use_server_time=False, flag='1', base_api='https://www.okx.com'):
 
         self.API_KEY = api_key
         self.API_SECRET_KEY = api_secret_key
         self.PASSPHRASE = passphrase
         self.use_server_time = use_server_time
         self.flag = flag
+        self.client = httpx.Client(base_url=base_api, http2=True)
 
     def _request(self, method, request_path, params):
 
@@ -39,9 +42,9 @@ class Client(object):
         # print("body:", body)
 
         if method == c.GET:
-            response = requests.get(url, headers=header)
+            response = self.client.get(url, headers=header)
         elif method == c.POST:
-            response = requests.post(url, data=body, headers=header)
+            response = self.client.post(url, data=body, headers=header)
 
         # exception handle
         # print(response.headers)
@@ -59,7 +62,7 @@ class Client(object):
 
     def _get_timestamp(self):
         url = c.API_URL + c.SERVER_TIMESTAMP_URL
-        response = requests.get(url)
+        response = self.client.get(url)
         if response.status_code == 200:
             return response.json()['ts']
         else:
