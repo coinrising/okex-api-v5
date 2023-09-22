@@ -92,6 +92,30 @@ class AccountAPI(Client):
         params = {'instType': instType, 'instId': instId, 'uly': uly, 'category': category}
         return self._request_with_params(GET, FEE_RATES, params)
 
+    def vip_borrow_repay(self, ccy, side, amt, ordId=None):
+        params = {'ccy': ccy, 'side': side, 'amt': amt, 'ordId': ordId}
+        return self._request_with_params(POST, BORROW_REPAY, params)
+
+    def vip_borrow_repay_history(self, ccy=None, after=None, before=None, limit=None):
+        params = {'ccy': ccy, 'after': after, 'before': before, 'limit': limit}
+        return self._request_with_params(GET, BORROW_REPAY_HISTORY, params)
+
+    def vip_interest_accrued(self, ccy=None, ordId=None, after=None, before=None, limit=None):
+        params = {'ccy': ccy, 'ordId': ordId, 'after': after, 'before': before, 'limit': limit}
+        return self._request_with_params(GET, VIP_INTEREST_ACCRUED, params)
+
+    def vip_interest_deducted(self, ordId=None, ccy=None, after=None, before=None, limit=None):
+        params = {'ordId': ordId, 'ccy': ccy, 'after': after, 'before': before, 'limit': limit}
+        return self._request_with_params(GET, VIP_INTEREST_DEDUCTED, params)
+
+    def vip_loan_order_list(self, ordId=None, state=None, ccy=None, after=None, before=None, limit=None):
+        params = {'ordId': ordId, 'state': state, 'ccy': ccy, 'after': after, 'before': before, 'limit': limit}
+        return self._request_with_params(GET, VIP_LOAN_ORDER_LIST, params)
+
+    def vip_loan_order_detail(self, ordId, ccy=None, after=None, before=None, limit=None):
+        params = {'ordId': ordId, 'ccy': ccy, 'after': after, 'before': before, 'limit': limit}
+        return self._request_with_params(GET, VIP_LOAN_ORDER_DETAIL, params)
+
     # Get interest-accrued
     def get_interest_accrued(self, instId=None, ccy=None, mgnMode=None, after=None, before=None, limit=None):
         params = {'instId': instId, 'ccy': ccy, 'mgnMode': mgnMode, 'after': after, 'before': before, 'limit': limit}
