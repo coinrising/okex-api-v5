@@ -102,6 +102,10 @@ class AccountAPI(Client):
         params = {'ccy': ccy}
         return self._request_with_params(GET, INTEREST_RATE_ACCOUNT, params)
 
+    def get_interest_limits(self, type=None, ccy=None):
+        params = {'type': type, 'ccy': ccy}
+        return self._request_with_params(GET, INTEREST_LIMITS, params)
+
     # Set Greeks (PA/BS)
     def set_greeks(self, greeksType):
         params = {'greeksType': greeksType}
