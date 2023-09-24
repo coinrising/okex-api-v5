@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='okex-api-v5',
-    version='1.1.10',
+    version='1.1.11',
     packages=['okex'],
     install_requires=['httpx[http2]'],
     author='zerodivision',
