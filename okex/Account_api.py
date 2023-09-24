@@ -117,8 +117,8 @@ class AccountAPI(Client):
         return self._request_with_params(GET, VIP_LOAN_ORDER_DETAIL, params)
 
     # Get interest-accrued
-    def get_interest_accrued(self, instId=None, ccy=None, mgnMode=None, after=None, before=None, limit=None):
-        params = {'instId': instId, 'ccy': ccy, 'mgnMode': mgnMode, 'after': after, 'before': before, 'limit': limit}
+    def get_interest_accrued(self, type=None, ccy=None, instId=None, mgnMode=None, after=None, before=None, limit=None):
+        params = {'type': type, 'ccy': ccy, 'instId': instId, 'mgnMode': mgnMode, 'after': after, 'before': before, 'limit': limit}
         return self._request_with_params(GET, INTEREST_ACCRUED, params)
 
     # Get interest-accrued
