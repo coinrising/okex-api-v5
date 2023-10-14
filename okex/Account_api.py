@@ -83,9 +83,13 @@ class AccountAPI(Client):
         return self._request_with_params(GET, GET_LEVERAGE, params)
 
     # Get the maximum loan of isolated MARGIN
-    def get_max_load(self, instId, mgnMode, mgnCcy):
+    def get_max_loan(self, instId, mgnMode, mgnCcy):
         params = {'instId': instId, 'mgnMode': mgnMode, 'mgnCcy': mgnCcy}
         return self._request_with_params(GET, MAX_LOAN, params)
+
+    def set_auto_loan(self, auto_loan):
+        params = {'autoLoan': auto_loan}
+        return self._request_with_params(POST, AUTO_LOAN, params)
 
     # Get Fee Rates
     def get_fee_rates(self, instType, instId=None, uly=None, category=None):
