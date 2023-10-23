@@ -55,14 +55,14 @@ class TradeAPI(Client):
         return self._request_with_params(GET, ORDERS_PENDING, params)
 
     # Get Order History (last 7 days）
-    def get_orders_history(self, instType, uly=None, instId=None, ordType=None, state=None, after=None, before=None, limit=None):
-        params = {'instType': instType, 'uly': uly, 'instId': instId, 'ordType': ordType, 'state': state,
+    def get_orders_history(self, instType, uly=None, instId=None, ordType=None, state=None, category=None, after=None, before=None, limit=None):
+        params = {'instType': instType, 'uly': uly, 'instId': instId, 'ordType': ordType, 'state': state, 'category': category,
                   'after': after, 'before': before, 'limit': limit}
         return self._request_with_params(GET, ORDERS_HISTORY, params)
 
     # Get Order History (last 3 months)
-    def orders_history_archive(self, instType, uly=None, instId=None, ordType=None, state=None, after=None, before=None, limit=None):
-        params = {'instType': instType, 'uly': uly, 'instId': instId, 'ordType': ordType, 'state': state,
+    def orders_history_archive(self, instType, uly=None, instId=None, ordType=None, state=None, after=None, category=None, before=None, limit=None):
+        params = {'instType': instType, 'uly': uly, 'instId': instId, 'ordType': ordType, 'state': state, 'category': category,
                   'after': after, 'before': before, 'limit': limit}
         return self._request_with_params(GET, ORDERS_HISTORY_ARCHIVE, params)
 
