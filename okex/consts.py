@@ -58,6 +58,11 @@ WITHDRAWAL_HISTORIY = '/api/v5/asset/withdrawal-history'
 CURRENCY_INFO = '/api/v5/asset/currencies'
 PURCHASE_REDEMPT = '/api/v5/asset/purchase_redempt'
 BILLS_INFO = '/api/v5/asset/bills'
+ETH_STAKING_PURCHASE = '/api/v5/finance/staking-defi/eth/purchase'
+ETH_STAKING_REDEEM = '/api/v5/finance/staking-defi/eth/redeem'
+ETH_STAKING_BALANCE = '/api/v5/finance/staking-defi/eth/balance'
+ETH_STAKING_HISTORY = '/api/v5/finance/staking-defi/eth/purchase-redeem-history'
+ETH_STAKING_APY_HISTORY = '/api/v5/finance/staking-defi/eth/apy-history'
 
 # Market Data
 TICKERS_INFO = '/api/v5/market/tickers'

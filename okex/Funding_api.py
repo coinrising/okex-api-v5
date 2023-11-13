@@ -51,3 +51,22 @@ class FundingAPI(Client):
     def get_bills(self, ccy=None, type=None, after=None, before=None, limit=None):
         params = {'ccy': ccy, 'type': type, 'after': after, 'before': before, 'limit': limit}
         return self._request_with_params(GET, BILLS_INFO, params)
+
+    def eth_staking_purchase(self, amt):
+        params = {'amt': amt}
+        return self._request_with_params(POST, ETH_STAKING_PURCHASE, params)
+
+    def eth_staking_redeem(self, amt):
+        params = {'amt': amt}
+        return self._request_with_params(POST, ETH_STAKING_REDEEM, params)
+
+    def get_eth_staking_balance(self):
+        return self._request_with_params(GET, ETH_STAKING_BALANCE)
+
+    def get_eth_staking_history(self, type=None, status=None, after=None, before=None, limit=None):
+        params = {'type': type, 'status': status, 'after': after, 'before': before, 'limit': limit}
+        return self._request_with_params(GET, ETH_STAKING_HISTORY, params)
+
+    def get_eth_staking_apy_history(self, days=None):
+        params = {'days': days}
+        return self._request_with_params(GET, ETH_STAKING_APY_HISTORY, params)
