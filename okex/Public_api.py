@@ -50,7 +50,7 @@ class PublicAPI(Client):
     # Get Discount Rate And Interest-Free Quota
     def discount_interest_free_quota(self, ccy=None):
         params = {'ccy': ccy}
-        return self._request_with_params(GET, DICCOUNT_INTETEST_INFO, params)
+        return self._request_with_params(GET, DISCOUNT_INTEREST_INFO, params)
 
     # Get System Time
     def get_system_time(self):

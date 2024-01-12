@@ -12,7 +12,7 @@ class TradeAPI(Client):
                     reduceOnly=None, tgtCcy=None):
         params = {'instId': instId, 'tdMode': tdMode, 'side': side, 'ordType': ordType, 'sz': sz, 'ccy': ccy,
                   'clOrdId': clOrdId, 'tag': tag, 'posSide': posSide, 'px': px, 'reduceOnly': reduceOnly, 'tgtCcy': tgtCcy}
-        return self._request_with_params(POST, PLACR_ORDER, params)
+        return self._request_with_params(POST, PLACE_ORDER, params)
 
     # Place Multiple Orders
     def place_multiple_orders(self, orders_data):
@@ -21,11 +21,11 @@ class TradeAPI(Client):
     # Cancel Order
     def cancel_order(self, instId, ordId=None, clOrdId=None):
         params = {'instId': instId, 'ordId': ordId, 'clOrdId': clOrdId}
-        return self._request_with_params(POST, CANAEL_ORDER, params)
+        return self._request_with_params(POST, CANCEL_ORDER, params)
 
     # Cancel Multiple Orders
     def cancel_multiple_orders(self, orders_data):
-        return self._request_with_params(POST, CANAEL_BATCH_ORDERS, orders_data)
+        return self._request_with_params(POST, CANCEL_BATCH_ORDERS, orders_data)
 
     # Amend Order
     def amend_order(self, instId, cxlOnFail=None, ordId=None, clOrdId=None, reqId=None, newSz=None, newPx=None):
@@ -88,7 +88,7 @@ class TradeAPI(Client):
     def order_algos_list(self, ordType, algoId=None, instType=None, instId=None, after=None, before=None, limit=None):
         params = {'ordType': ordType, 'algoId': algoId, 'instType': instType, 'instId': instId, 'after': after,
                   'before': before, 'limit': limit}
-        return self._request_with_params(GET, ORDERS_ALGO_OENDING, params)
+        return self._request_with_params(GET, ORDERS_ALGO_PENDING, params)
 
     # Get Algo Order History
     def order_algos_history(self, ordType, state=None, algoId=None, instType=None, instId=None, after=None, before=None, limit=None):

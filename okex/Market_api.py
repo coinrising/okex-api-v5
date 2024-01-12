@@ -43,12 +43,12 @@ class MarketAPI(Client):
     # Get Index Candlesticks
     def get_index_candlesticks(self, instId, after=None, before=None, bar=None, limit=None):
         params = {'instId': instId, 'after': after, 'before': before, 'bar': bar, 'limit': limit}
-        return self._request_with_params(GET, INDEX_CANSLES, params)
+        return self._request_with_params(GET, INDEX_CANDLES, params)
 
     # Get Mark Price Candlesticks
     def get_markprice_candlesticks(self, instId, after=None, before=None, bar=None, limit=None):
         params = {'instId': instId, 'after': after, 'before': before, 'bar': bar, 'limit': limit}
-        return self._request_with_params(GET, MARKPRICE_CANDLES, params)
+        return self._request_with_params(GET, MARK_PRICE_CANDLES, params)
 
     # Get Index Candlesticks
     def get_trades(self, instId, limit=None):
@@ -57,7 +57,7 @@ class MarketAPI(Client):
 
     # Get Volume
     def get_volume(self):
-        return self._request_without_params(GET, VOLUMNE)
+        return self._request_without_params(GET, VOLUME)
 
     # Get Oracle
     def get_oracle(self):
