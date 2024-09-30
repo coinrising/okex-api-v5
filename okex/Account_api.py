@@ -95,6 +95,10 @@ class AccountAPI(Client):
         params = {'autoLoan': auto_loan}
         return self._request_with_params(POST, AUTO_LOAN, params)
 
+    def set_account_level(self, account_level):
+        params = {'acctLv': account_level}
+        return self._request_with_params(POST, ACCOUNT_LEVEL, params)
+
     # Get Fee Rates
     def get_fee_rates(self, instType, instId=None, uly=None, category=None):
         params = {'instType': instType, 'instId': instId, 'uly': uly, 'category': category}
