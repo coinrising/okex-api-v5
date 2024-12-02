@@ -70,3 +70,7 @@ class FundingAPI(Client):
     def get_eth_staking_apy_history(self, days=None):
         params = {'days': days}
         return self._request_with_params(GET, ETH_STAKING_APY_HISTORY, params)
+
+    def get_asset_valuation(self,ccy=None):
+        params = {'ccy': ccy}
+        return self._request_with_params(GET, ASSET_VALUATION, params)
