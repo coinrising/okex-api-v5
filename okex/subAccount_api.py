@@ -10,6 +10,10 @@ class SubAccountAPI(Client):
         params = {"subAcct": subAcct}
         return self._request_with_params(GET, BALANCE, params)
 
+    def asset_balances(self, subAcct):
+        params = {"subAcct": subAcct}
+        return self._request_with_params(GET, ASSET_BALANCE, params)
+
     def bills(self, ccy=None, type=None, subAcct=None, after=None, before=None, limit=None):
         params = {"ccy": ccy, 'type': type, 'subAcct': subAcct, 'after': after, 'before': before, 'limit': limit}
         return self._request_with_params(GET, BILLs, params)

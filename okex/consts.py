@@ -119,6 +119,7 @@ ONE_CLICK_REPAY = '/api/v5/trade/one-click-repay'
 
 # SubAccount
 BALANCE = '/api/v5/account/subaccount/balances'
+ASSET_BALANCE = '/api/v5/asset/subaccount/balances'
 BILLs = '/api/v5/asset/subaccount/bills'
 DELETE = '/api/v5/users/subaccount/delete-apikey'
 RESET = '/api/v5/users/subaccount/modify-apikey'
