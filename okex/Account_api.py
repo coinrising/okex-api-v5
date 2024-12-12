@@ -153,11 +153,3 @@ class AccountAPI(Client):
         if ccy:
             params['ccy'] = ccy
         return self._request_with_params(GET, MAX_WITHDRAWAL, params)
-
-    def get_staking_defi_offers(self, product_id=None, protocol_type=None, ccy=None):
-        params = {'productId': product_id, 'protocolType': protocol_type, 'ccy': ccy}
-        return self._request_with_params(GET, FINANCE_STAKING_DEFI_OFFERS, params)
-
-    def post_staking_defi_purchase(self, product_id, invest_data, term=None):
-        params = {'productId': product_id, 'investData': invest_data, 'term': term}
-        return self._request_with_params(POST, FINANCE_STAKING_DEFI_PURCHASE, params)
