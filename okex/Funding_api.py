@@ -71,6 +71,10 @@ class FundingAPI(Client):
         params = {'days': days}
         return self._request_with_params(GET, ETH_STAKING_APY_HISTORY, params)
 
+    def get_asset_valuation(self,ccy=None):
+        params = {'ccy': ccy}
+        return self._request_with_params(GET, ASSET_VALUATION, params)
+
     def get_staking_defi_offers(self, product_id=None, protocol_type=None, ccy=None):
         params = {'productId': product_id, 'protocolType': protocol_type, 'ccy': ccy}
         return self._request_with_params(GET, FINANCE_STAKING_DEFI_OFFERS, params)
