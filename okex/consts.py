@@ -48,7 +48,9 @@ INTEREST_LIMITS = '/api/v5/account/interest-limits'
 SET_GREEKS = '/api/v5/account/set-greeks'
 MAX_WITHDRAWAL = '/api/v5/account/max-withdrawal'
 FINANCE_STAKING_DEFI_OFFERS = '/api/v5/finance/staking-defi/offers'
+FINANCE_STAKING_DEFI_ORDERS_ACTIVE = '/api/v5/finance/staking-defi/orders-active'
 FINANCE_STAKING_DEFI_PURCHASE = '/api/v5/finance/staking-defi/purchase'
+FINANCE_STAKING_DEFI_REDEEM = '/api/v5/finance/staking-defi/redeem'
 
 # funding
 DEPOSIT_ADDRESS = '/api/v5/asset/deposit-address'
