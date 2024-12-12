@@ -70,3 +70,19 @@ class FundingAPI(Client):
     def get_eth_staking_apy_history(self, days=None):
         params = {'days': days}
         return self._request_with_params(GET, ETH_STAKING_APY_HISTORY, params)
+
+    def get_staking_defi_offers(self, product_id=None, protocol_type=None, ccy=None):
+        params = {'productId': product_id, 'protocolType': protocol_type, 'ccy': ccy}
+        return self._request_with_params(GET, FINANCE_STAKING_DEFI_OFFERS, params)
+
+    def get_staking_defi_orders_active(self, product_id=None, protocol_type=None, ccy=None, state=None):
+        params = {'productId': product_id, 'protocolType': protocol_type, 'ccy': ccy, 'state': state}
+        return self._request_with_params(GET, FINANCE_STAKING_DEFI_ORDERS_ACTIVE, params)
+
+    def post_staking_defi_purchase(self, product_id, invest_data, term=None):
+        params = {'productId': product_id, 'investData': invest_data, 'term': term}
+        return self._request_with_params(POST, FINANCE_STAKING_DEFI_PURCHASE, params)
+
+    def post_staking_defi_redeem(self, ord_id, protocol_type='defi', allow_early_redeem=False):
+        params = {'ordId': ord_id, 'protocolType': protocol_type, 'allowEarlyRedeem': allow_early_redeem}
+        return self._request_with_params(POST, FINANCE_STAKING_DEFI_REDEEM, params)
