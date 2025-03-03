@@ -24,8 +24,9 @@ class FundingAPI(Client):
         return self._request_with_params(POST, FUNDS_TRANSFER, params)
 
     # Withdrawal
-    def coin_withdraw(self, ccy, amt, dest, toAddr, chain='', clientId=''):
-        params = {'ccy': ccy, 'amt': amt, 'dest': dest, 'toAddr': toAddr, 'chain': chain, 'clientId': clientId}
+    def coin_withdraw(self, ccy, amt, dest, toAddr, chain='', clientId='', rcvrInfo=None):
+        print(rcvrInfo)
+        params = {'ccy': ccy, 'amt': amt, 'dest': dest, 'toAddr': toAddr, 'chain': chain, 'clientId': clientId, 'rcvrInfo': rcvrInfo}
         return self._request_with_params(POST, WITHDRAWAL_COIN, params)
 
     # Get Deposit History
@@ -41,7 +42,7 @@ class FundingAPI(Client):
     # Get Currencies
     def get_currency(self, ccy=None):
         params = {'ccy': ccy}
-        return self._request_without_params(GET, CURRENCY_INFO, params)
+        return self._request_with_params(GET, CURRENCY_INFO, params)
 
     # PiggyBank Purchase/Redemption
     def purchase_redempt(self, ccy, amt, side):
